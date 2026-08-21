@@ -1,186 +1,352 @@
 # 🤖 Mão Robótica Controlada por Visão Computacional
 
-> Projeto educacional de uma mão robótica controlada por **visão computacional**, desenvolvido com foco em **baixo custo, acessibilidade e reprodução por estudantes**.
-
-Este repositório tem como objetivo documentar o desenvolvimento de uma mão robótica capaz de interpretar movimentos realizados pelo usuário por meio de uma câmera e transformar essas informações em movimentos correspondentes da mão robótica.
-
-O projeto foi desenvolvido com uma abordagem **open source**, permitindo que estudantes, professores, pesquisadores e entusiastas possam reproduzir o projeto, compreender seu funcionamento e desenvolver suas próprias versões.
+> Projeto educacional e experimental de uma mão robótica controlada por visão computacional, desenvolvido com componentes de baixo custo e materiais acessíveis, com o objetivo de permitir que estudantes possam reproduzir, estudar e aprimorar o projeto.
 
 ---
 
-## 📌 Sobre o projeto
+## 📖 Sobre o projeto
 
-A proposta consiste em utilizar **visão computacional** para identificar a posição e/ou os movimentos da mão humana.
+Este projeto consiste no desenvolvimento de uma **mão robótica capaz de reproduzir individualmente os movimentos dos cinco dedos de uma mão humana utilizando visão computacional**.
 
-As informações capturadas pela câmera são processadas por um software responsável por interpretar os movimentos e gerar os comandos necessários para controlar os atuadores da mão robótica.
+Uma câmera captura os movimentos realizados pelo usuário. O computador utiliza **Python, OpenCV e MediaPipe** para identificar a mão e determinar individualmente o estado de cada dedo.
 
-De forma simplificada:
+As informações são convertidas em um comando de cinco posições e enviadas através de comunicação serial para um **Arduino Uno**.
 
-```text
-┌──────────────┐
-│    Câmera    │
-└──────┬───────┘
-       │
-       ▼
-┌─────────────────────┐
-│ Visão Computacional │
-│  Detecção da mão    │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Interpretação dos   │
-│     movimentos      │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│ Controlador / MCU   │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│     Atuadores       │
-│ Servos / Motores    │
-└─────────┬───────────┘
-          │
-          ▼
-┌─────────────────────┐
-│    Mão Robótica     │
-└─────────────────────┘
-```
+O Arduino interpreta o comando e controla cinco servomotores, sendo **um servo dedicado a cada dedo**.
+
+O movimento dos servos é transmitido para os dedos através de **barbantes utilizados como tendões artificiais**. Para retornar os dedos à posição aberta, são utilizados **elásticos de tecido**, que exercem uma força contrária à tração dos servomotores.
+
+O resultado é um sistema no qual o movimento realizado pelo usuário é reproduzido pela mão robótica em tempo real.
 
 ---
 
 ## 🎯 Objetivos
 
-### Objetivo principal
+### Objetivo geral
 
-Desenvolver uma mão robótica controlada por visão computacional, utilizando tecnologias acessíveis e uma documentação que permita a reprodução do projeto por outros estudantes.
+Desenvolver uma mão robótica de baixo custo controlada por visão computacional, capaz de identificar individualmente os movimentos dos cinco dedos e reproduzi-los por meio de servomotores.
 
 ### Objetivos específicos
 
-* Desenvolver a estrutura mecânica da mão robótica;
-* Implementar o sistema de acionamento dos dedos;
-* Desenvolver o sistema de visão computacional;
-* Identificar os movimentos da mão humana;
-* Converter os movimentos identificados em comandos para os atuadores;
-* Integrar hardware e software;
-* Desenvolver uma interface de comunicação entre o computador e o sistema embarcado;
-* Documentar o projeto de forma didática;
-* Possibilitar que outros estudantes reproduzam e aprimorem o projeto.
+* Desenvolver uma estrutura mecânica de baixo custo;
+* Utilizar materiais facilmente encontrados para construção da mão;
+* Implementar detecção de mãos utilizando MediaPipe;
+* Identificar individualmente o estado dos cinco dedos;
+* Diferenciar mão esquerda e direita durante a detecção;
+* Criar um sistema de comunicação entre computador e Arduino;
+* Controlar cinco servomotores individualmente;
+* Desenvolver um sistema de tendões utilizando barbante;
+* Utilizar elásticos como mecanismo de retorno dos dedos;
+* Documentar o projeto de maneira que outros estudantes possam reproduzi-lo;
+* Permitir futuras melhorias e modificações no sistema.
 
 ---
 
-## 🧠 Como funciona?
+# 🧠 Funcionamento
 
-O sistema utiliza uma câmera para capturar os movimentos realizados pela mão do usuário.
-
-O software de visão computacional analisa a imagem capturada e identifica características da mão, como a posição dos dedos e suas articulações.
-
-A partir dessas informações, o sistema determina quais movimentos devem ser realizados pela mão robótica.
-
-O controlador recebe os comandos e aciona os atuadores responsáveis pelo movimento dos dedos.
-
-### Fluxo de funcionamento
+O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
 ```text
-Mão humana
-    ↓
-Câmera
-    ↓
-Processamento da imagem
-    ↓
-Detecção da mão
-    ↓
-Identificação dos dedos
-    ↓
-Cálculo dos movimentos
-    ↓
-Comandos de controle
-    ↓
-Microcontrolador
-    ↓
-Atuadores
-    ↓
-Mão robótica
+┌──────────────────┐
+│      CÂMERA      │
+└────────┬─────────┘
+         │
+         ▼
+┌──────────────────────────┐
+│      PYTHON + OPENCV     │
+│        + MEDIAPIPE       │
+└────────────┬─────────────┘
+             │
+             │ Estado dos 5 dedos
+             ▼
+┌──────────────────────────┐
+│      COMANDO SERIAL      │
+│        "10100"            │
+└────────────┬─────────────┘
+             │
+             │ USB / Serial
+             ▼
+┌──────────────────────────┐
+│       ARDUINO UNO        │
+└────────────┬─────────────┘
+             │
+       ┌─────┴─────┐
+       │           │
+       ▼           ▼
+  ┌─────────┐  ┌─────────┐
+  │ SERVOS  │  │ SERVOS  │
+  │  1 2 3  │  │  4  5   │
+  └────┬────┘  └────┬────┘
+       │             │
+       ▼             ▼
+   Tendões        Tendões
+       │             │
+       └──────┬──────┘
+              ▼
+       ┌─────────────┐
+       │ MÃO ROBÓTICA│
+       └─────────────┘
 ```
 
 ---
 
-## 🛠️ Tecnologias utilizadas
+# 👁️ Visão Computacional
 
-O projeto pode utilizar diferentes tecnologias dependendo da versão desenvolvida.
+A visão computacional é executada no computador utilizando:
 
-### Software
+* **Python**
+* **OpenCV**
+* **MediaPipe**
+* **PySerial**
+
+O MediaPipe Hands é responsável por identificar a mão e suas principais articulações.
+
+O programa analisa a posição dos pontos detectados para determinar se cada dedo está levantado ou abaixado.
+
+São analisados individualmente:
+
+1. Polegar
+2. Indicador
+3. Médio
+4. Anelar
+5. Mínimo
+
+A detecção funciona tanto para a **mão esquerda quanto para a mão direita**.
+
+A lógica do polegar é ajustada de acordo com o lado identificado pelo MediaPipe, enquanto os demais dedos são analisados utilizando suas posições relativas no eixo vertical.
+
+---
+
+# 🎯 Área de controle
+
+Para evitar que qualquer movimento detectado pela câmera seja imediatamente enviado para a mão robótica, o software possui uma **área de controle delimitada na imagem**.
+
+```text
+┌─────────────────────────────────────────┐
+│                                         │
+│                                         │
+│                     ┌───────────────┐   │
+│                     │               │   │
+│                     │ ÁREA DE       │   │
+│                     │ CONTROLE      │   │
+│                     │               │   │
+│                     └───────────────┘   │
+│                                         │
+└─────────────────────────────────────────┘
+```
+
+O sistema verifica a posição do pulso.
+
+Quando o pulso está dentro da área delimitada:
+
+**Controle Ativo!**
+
+Quando o pulso está fora:
+
+**Pulso fora da área!**
+
+Dessa maneira, o usuário pode posicionar a mão na área definida antes de começar a controlar a mão robótica.
+
+---
+
+# 🔢 Sistema de comandos
+
+Cada dedo possui um bit no comando enviado ao Arduino.
+
+A sequência utilizada é:
+
+```text
+Polegar → Indicador → Médio → Anelar → Mínimo
+```
+
+Cada posição pode assumir dois estados:
+
+```text
+0 = Aberto
+1 = Fechado
+```
+
+Por exemplo:
+
+```text
+10100
+```
+
+significa:
+
+```text
+Polegar   → Fechado
+Indicador → Aberto
+Médio     → Fechado
+Anelar    → Aberto
+Mínimo    → Aberto
+```
+
+O comando é enviado continuamente enquanto uma mão válida estiver dentro da área de controle.
+
+---
+
+# ⚙️ Sistema mecânico
+
+A estrutura da mão foi construída utilizando **papelão**, tornando o projeto simples e acessível para reprodução.
+
+Cada dedo possui um sistema independente de movimentação.
+
+### Tendões
+
+Para transmitir o movimento dos servomotores para os dedos, foram utilizados **barbantes**, funcionando como tendões artificiais.
+
+```text
+Servo
+  │
+  │ tração
+  ▼
+Barbante
+  │
+  ▼
+Dedo
+```
+
+Quando o servo gira no sentido de fechamento, o barbante é tensionado e puxa o dedo.
+
+### Retorno dos dedos
+
+Para retornar os dedos à posição aberta, foram utilizados **elásticos de tecido**.
+
+Os elásticos foram fixados na parte posterior dos dedos de maneira que permaneçam constantemente tensionados, exercendo força no sentido de abertura.
+
+Assim:
+
+```text
+              FECHAMENTO
+                  ↑
+                  │
+               Barbante
+                  │
+               ┌──┴──┐
+               │ Dedo│
+               └──┬──┘
+                  │
+                  ↓
+              ELÁSTICO
+              ABERTURA
+```
+
+Quando o servo é acionado, sua força vence a tensão do elástico e o dedo é fechado.
+
+Quando o servo retorna, o elástico auxilia o dedo a voltar para a posição aberta.
+
+---
+
+# 🔌 Eletrônica
+
+O sistema utiliza um **Arduino Uno** para controlar os cinco servomotores.
+
+Os sinais de controle são conectados aos pinos:
+
+| Dedo      | Arduino |
+| --------- | ------: |
+| Polegar   |      D2 |
+| Indicador |      D3 |
+| Médio     |      D4 |
+| Anelar    |      D5 |
+| Mínimo    |      D6 |
+
+### Alimentação
+
+Os cinco servomotores são alimentados por uma fonte externa de:
+
+**5 V / 2 A**
+
+A fonte externa é utilizada para evitar que a corrente necessária pelos servomotores seja fornecida diretamente pelo Arduino.
+
+O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma referência comum para os sinais de controle.
+
+```text
+             FONTE 5 V / 2 A
+                  │
+           ┌──────┴──────┐
+           │             │
+          +5V           GND
+           │             │
+           ▼             │
+     ┌─────────────┐     │
+     │  SERVOS     │     │
+     │  1 2 3 4 5  │     │
+     └──────┬──────┘     │
+            │            │
+       Sinais            │
+      D2-D6              │
+            │            │
+            ▼            ▼
+        ┌──────────────────┐
+        │    ARDUINO UNO   │
+        │                  │
+        │ D2 → Servo 1     │
+        │ D3 → Servo 2     │
+        │ D4 → Servo 3     │
+        │ D5 → Servo 4     │
+        │ D6 → Servo 5     │
+        │                  │
+        │ GND ─────────────┘
+        └──────────────────┘
+```
+
+> ⚠️ **Importante:** os servomotores não devem ser alimentados diretamente pelos pinos de 5 V do Arduino. Uma fonte externa adequada deve ser utilizada, mantendo o GND comum entre a fonte e o Arduino.
+
+---
+
+# 🧩 Placa de conexão
+
+Para facilitar a montagem, foi desenvolvida uma pequena placa de distribuição utilizando **placa perfurada**.
+
+A placa possui:
+
+* Conectores para os cinco servomotores;
+* Conexões para os sinais de controle;
+* Distribuição da alimentação de 5 V;
+* Conexão por borne para a fonte externa;
+* GND comum para os servomotores.
+
+A finalidade da placa não é realizar processamento eletrônico, mas **organizar e facilitar as conexões do sistema**.
+
+---
+
+# 🛠️ Componentes
+
+| Componente         | Quantidade | Função                               |
+| ------------------ | ---------: | ------------------------------------ |
+| Arduino Uno        |          1 | Controle dos servomotores            |
+| Servomotor DG90    |          5 | Acionamento dos dedos                |
+| Fonte 5 V / 2 A    |          1 | Alimentação dos servos               |
+| Placa perfurada    |          1 | Distribuição das conexões            |
+| Conectores         |          5 | Conexão dos servos                   |
+| Borne              |          1 | Entrada da alimentação externa       |
+| Jumpers            |          6 | Conexões elétricas                   |
+| Barbante           |          — | Tendões artificiais                  |
+| Elástico de tecido |          — | Retorno dos dedos                    |
+| Papelão            |          — | Estrutura da mão                     |
+| Câmera             |          1 | Captura da mão do usuário            |
+| Computador         |          1 | Processamento da visão computacional |
+
+---
+
+# 💻 Software
+
+## Tecnologias
 
 * Python
 * OpenCV
-* Bibliotecas de visão computacional
-* Algoritmos de detecção e rastreamento da mão
-
-### Hardware
-
-* Microcontrolador
-* Servomotores e/ou outros atuadores
-* Câmera
-* Fonte de alimentação
-* Estrutura mecânica
-* Componentes eletrônicos
-
-> ⚠️ A lista definitiva de componentes e suas especificações será apresentada na documentação de montagem.
+* MediaPipe
+* PySerial
+* Arduino IDE
+* Arduino Uno
 
 ---
 
-## 📦 Componentes
+## 📦 Instalação
 
-A quantidade e o modelo dos componentes podem variar de acordo com a versão da mão robótica.
-
-| Componente           | Quantidade | Função                 |
-| -------------------- | ---------: | ---------------------- |
-| Microcontrolador     |          1 | Controle dos atuadores |
-| Câmera               |          1 | Captura dos movimentos |
-| Servomotores         |  A definir | Movimentação dos dedos |
-| Fonte de alimentação |          1 | Alimentação do sistema |
-| Estrutura da mão     |          1 | Estrutura mecânica     |
-| Cabos                |          — | Conexões elétricas     |
-| Outros componentes   |          — | Dependendo da versão   |
-
----
-
-## 🔧 Montagem
-
-A montagem do projeto será dividida em etapas para facilitar a reprodução.
-
-### 1. Estrutura mecânica
-
-Montagem da estrutura responsável por representar os dedos, palma e demais componentes mecânicos.
-
-### 2. Instalação dos atuadores
-
-Os servomotores ou outros atuadores devem ser instalados de forma que seus movimentos sejam transmitidos aos dedos da mão robótica.
-
-### 3. Circuito eletrônico
-
-Realização das conexões entre o microcontrolador, atuadores e fonte de alimentação.
-
-### 4. Programação
-
-Configuração do firmware responsável pelo controle dos atuadores.
-
-### 5. Sistema de visão computacional
-
-Instalação das bibliotecas necessárias e configuração do software responsável pela identificação dos movimentos da mão.
-
-### 6. Integração
-
-Por fim, o sistema de visão computacional será conectado ao sistema embarcado para permitir o controle da mão robótica.
-
----
-
-## 💻 Instalação
-
-Clone este repositório:
+Clone o repositório:
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
@@ -192,33 +358,138 @@ Entre na pasta:
 cd mao-robotica-visao-computacional
 ```
 
-Instale as dependências necessárias:
+Instale as bibliotecas Python:
 
 ```bash
-pip install -r requirements.txt
+pip install opencv-python mediapipe pyserial
 ```
 
-Execute o programa:
+---
+
+# 🔌 Configuração da porta serial
+
+O programa atualmente utiliza:
+
+```python
+serial.Serial('COM8', 9600)
+```
+
+Caso o Arduino esteja conectado em outra porta, altere:
+
+```python
+'COM8'
+```
+
+para a porta correspondente ao seu computador.
+
+A comunicação utiliza:
+
+```text
+Baud Rate: 9600
+```
+
+---
+
+# 🧪 Modo de teste
+
+Uma das características do software é a possibilidade de executar o sistema **sem o Arduino conectado**.
+
+Caso o Arduino não seja encontrado, o programa entra automaticamente em modo de teste:
+
+```text
+Arduino não encontrado
+        ↓
+Modo de teste
+        ↓
+Câmera continua funcionando
+        ↓
+Movimentos continuam sendo detectados
+```
+
+Isso permite testar a parte de visão computacional antes de montar a parte eletrônica.
+
+---
+
+# ▶️ Executando o projeto
+
+Depois de conectar a câmera:
 
 ```bash
 python main.py
 ```
 
-> Os comandos acima serão atualizados conforme a estrutura definitiva do projeto.
+Uma janela será aberta mostrando a imagem da câmera.
+
+O programa apresenta:
+
+* Área de controle;
+* Estado da conexão;
+* Comando atual;
+* Estado individual dos cinco dedos;
+* Detecção da mão;
+* Posição do pulso;
+* Informações de controle.
+
+Para encerrar o programa:
+
+```text
+ESC
+```
 
 ---
 
-## 🎮 Controle
+# 🔄 Fluxo completo
 
-Após iniciar o sistema, a câmera deverá ser posicionada de maneira que a mão do usuário esteja visível.
+O funcionamento completo pode ser resumido da seguinte maneira:
 
-O software realizará a detecção da mão e utilizará as informações obtidas para gerar os comandos destinados à mão robótica.
-
-A calibração inicial poderá ser necessária para ajustar os limites de movimento de cada dedo.
+```text
+        MÃO DO USUÁRIO
+              │
+              ▼
+           CÂMERA
+              │
+              ▼
+        OpenCV + MediaPipe
+              │
+              ▼
+      Detecção da mão
+              │
+              ▼
+       Detecção dos dedos
+              │
+              ▼
+     ┌─────────────────┐
+     │ 0 1 0 0 1       │
+     │ ↓ ↓ ↓ ↓ ↓       │
+     │ A F A A F       │
+     └────────┬────────┘
+              │
+              ▼
+        Serial / USB
+              │
+              ▼
+         ARDUINO UNO
+              │
+       ┌──────┼──────┐
+       │      │      │
+       ▼      ▼      ▼
+     Servo  Servo  Servo ...
+       │      │      │
+       ▼      ▼      ▼
+    Tendão  Tendão  Tendão
+       │      │      │
+       ▼      ▼      ▼
+      Dedo   Dedo   Dedo
+              │
+              ▼
+       MÃO ROBÓTICA
+```
 
 ---
 
-## 📁 Estrutura do repositório
+# 🗂️ Estrutura do repositório
+
+A estrutura será organizada para separar software, eletrônica, mecânica e documentação:
 
 ```text
 mao-robotica-visao-computacional/
@@ -227,138 +498,157 @@ mao-robotica-visao-computacional/
 │
 ├── software/
 │   ├── main.py
-│   ├── vision/
-│   └── control/
+│   └── requirements.txt
+│
+├── arduino/
+│   └── controle_servos/
+│       └── controle_servos.ino
 │
 ├── hardware/
-│   ├── circuitos/
 │   ├── esquemas/
-│   └── componentes/
+│   ├── placa/
+│   └── fotos/
 │
-├── mechanical/
-│   ├── modelos-3d/
-│   └── desenhos/
-│
-├── docs/
+├── mecanica/
 │   ├── montagem/
-│   ├── configuracao/
-│   └── testes/
+│   └── modelos/
 │
-└── requirements.txt
+└── docs/
+    ├── montagem.md
+    ├── funcionamento.md
+    └── testes.md
 ```
 
 ---
 
-## 🧪 Testes
+# 🚧 Status do projeto
 
-Durante o desenvolvimento serão realizados testes para avaliar:
+**Em desenvolvimento**
 
-* Detecção da mão;
-* Identificação dos dedos;
-* Precisão dos movimentos;
-* Tempo de resposta;
-* Comunicação entre computador e microcontrolador;
-* Movimento dos atuadores;
-* Sincronização entre mão humana e mão robótica;
-* Confiabilidade do sistema.
+### Concluído
 
-Os resultados dos testes serão documentados neste repositório.
+* [x] Detecção da mão por câmera
+* [x] Detecção dos dedos
+* [x] Identificação de mão esquerda e direita
+* [x] Controle individual dos cinco dedos
+* [x] Comunicação Python → Arduino
+* [x] Controle dos cinco canais
+* [x] Protótipo mecânico em papelão
+* [x] Sistema de tendões com barbante
+* [x] Sistema de retorno com elásticos
+* [x] Alimentação externa dos servomotores
+* [x] Placa de conexão em placa perfurada
+* [x] Modo de teste sem Arduino
 
----
+### Em desenvolvimento
 
-## 🚧 Status do projeto
-
-**Em desenvolvimento 🚧**
-
-O projeto está sendo desenvolvido e documentado progressivamente.
-
-Novas informações, códigos, esquemas elétricos, modelos mecânicos e procedimentos de montagem serão adicionados conforme o desenvolvimento avançar.
-
----
-
-## 📚 Documentação
-
-A documentação será organizada para permitir que uma pessoa com conhecimentos básicos de eletrônica, programação e robótica consiga acompanhar o projeto desde o início.
-
-Em breve:
-
-* [ ] Guia de componentes
-* [ ] Esquema elétrico
-* [ ] Montagem mecânica
-* [ ] Arquivos 3D
-* [ ] Configuração do microcontrolador
-* [ ] Instalação do software
-* [ ] Configuração da visão computacional
-* [ ] Calibração
-* [ ] Testes
-* [ ] Solução de problemas
+* [ ] Melhorias na estrutura mecânica
+* [ ] Ajuste dos ângulos dos servomotores
+* [ ] Calibração individual dos dedos
+* [ ] Otimização dos movimentos
+* [ ] Testes de precisão
+* [ ] Melhorias na documentação
+* [ ] Testes de longo período
+* [ ] Melhorias na estrutura da mão
 
 ---
 
-## 🎓 Projeto educacional
+# 🎓 Projeto educacional
 
-Este projeto foi desenvolvido com o propósito de servir também como **material educacional**.
+Um dos principais objetivos deste projeto é possibilitar que **outros estudantes possam reproduzir o sistema utilizando materiais acessíveis**.
 
-A documentação busca possibilitar que estudantes de diferentes níveis possam:
+A escolha de materiais como:
 
-* compreender os princípios de visão computacional;
-* aprender conceitos de robótica;
-* desenvolver sistemas embarcados;
-* estudar eletrônica;
-* trabalhar com programação;
-* integrar diferentes áreas da engenharia;
-* reproduzir o projeto;
-* modificar e melhorar o sistema.
+* papelão;
+* barbante;
+* elástico;
+* placa perfurada;
+* jumpers;
+* servomotores de baixo custo;
 
-A ideia não é apenas disponibilizar o resultado final, mas também **documentar o processo de desenvolvimento**, incluindo decisões, testes, erros e melhorias.
+permite construir um protótipo funcional sem a necessidade de equipamentos industriais ou processos de fabricação complexos.
+
+O projeto também permite estudar, em um único sistema, conceitos de:
+
+**Programação + Visão Computacional + Eletrônica + Sistemas Embarcados + Robótica + Mecânica**
+
+A documentação será desenvolvida de forma progressiva para que cada etapa possa ser reproduzida independentemente.
 
 ---
 
-## 🤝 Contribuições
+# 🔬 Possibilidades de evolução
+
+O projeto foi desenvolvido de forma modular, permitindo diversas melhorias futuras.
+
+Entre elas:
+
+* Substituição da estrutura de papelão por uma estrutura impressa em 3D;
+* Desenvolvimento de uma PCB dedicada;
+* Controle mais preciso da posição dos servos;
+* Calibração automática;
+* Controle proporcional dos movimentos;
+* Identificação de gestos completos;
+* Comunicação sem fio;
+* Utilização de microcontroladores com maior capacidade de processamento;
+* Desenvolvimento de uma interface gráfica;
+* Implementação de sensores de posição ou força;
+* Desenvolvimento de diferentes modelos mecânicos de dedos.
+
+---
+
+# 🤝 Contribuições
 
 Contribuições são bem-vindas!
 
-Você pode contribuir através de:
+Você pode contribuir com:
 
-* Correções;
 * Melhorias no código;
+* Novos métodos de detecção;
 * Melhorias mecânicas;
-* Otimizações;
-* Novas funcionalidades;
+* Novos projetos de dedos;
+* Melhorias eletrônicas;
+* Correções;
 * Documentação;
-* Sugestões;
-* Relatos de problemas.
+* Testes;
+* Sugestões de novas funcionalidades.
 
-Para contribuir, faça um *fork* do projeto, realize suas alterações e envie um *pull request*.
+Caso você desenvolva uma versão diferente da mão, compartilhe sua experiência para que outras pessoas também possam aprender com ela.
 
 ---
 
-## ⚠️ Aviso
+# ⚠️ Segurança
 
 Este projeto possui finalidade **educacional e experimental**.
 
-A reprodução do projeto deve considerar as características dos componentes utilizados, principalmente em relação à alimentação elétrica, corrente dos atuadores e limites mecânicos da estrutura.
+Os servomotores devem possuir uma fonte de alimentação adequada e não devem ser alimentados diretamente pelos pinos de alimentação do Arduino quando a corrente necessária exceder a capacidade da placa.
 
-Sempre verifique as especificações dos componentes antes de realizar a montagem.
+Antes de realizar a montagem:
+
+* Verifique a polaridade da alimentação;
+* Confira todas as conexões;
+* Utilize uma fonte adequada;
+* Mantenha o GND da fonte e do Arduino em comum;
+* Evite prender os dedos durante os testes;
+* Limite os movimentos dos servos para evitar esforços mecânicos excessivos.
 
 ---
 
-## 📜 Licença
+# 📜 Licença
 
-Este projeto será disponibilizado sob uma licença open source.
+Este projeto será disponibilizado como um projeto de código aberto.
 
-> A licença será definida conforme a versão final do projeto.
+A licença definitiva será definida conforme a publicação da versão final do repositório.
 
 ---
 
-## 👨‍💻 Autor
+# 👨‍💻 Autor
 
 **Pedro Ledo**
 
-Projeto desenvolvido no contexto de estudos e desenvolvimento tecnológico em **Automação, Robótica e Visão Computacional**.
+Projeto desenvolvido na área de **Automação, Robótica e Visão Computacional**, com foco em desenvolvimento tecnológico e educação.
 
 ---
 
-⭐ Se este projeto for útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.
+⭐ **Se este projeto foi útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.**
 
-**Construa. Teste. Erre. Melhore. Compartilhe.**
+> **Aprender fazendo. Documentar para ensinar. Compartilhar para evoluir.**
