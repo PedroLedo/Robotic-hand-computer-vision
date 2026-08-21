@@ -181,6 +181,15 @@ A estrutura da mão foi construída utilizando **papelão**, tornando o projeto 
 
 Cada dedo possui um sistema independente de movimentação.
 
+---
+
+<p align="center">
+  <img src="Docs/Imagens/20260821_175730.jpg" alt="Interface do Projeto de Visão Computacional">
+</p>
+
+---
+
+
 ### Tendões
 
 Para transmitir o movimento dos servomotores para os dedos, foram utilizados **barbantes**, funcionando como tendões artificiais.
