@@ -415,6 +415,9 @@ Faça o download do codigo do Arduino:
 
 ---
 
+Com o codigo já baixado, clique com o botão direito do mouse, e extraia ele
+
+
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
