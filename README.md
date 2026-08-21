@@ -252,11 +252,11 @@ Os sinais de controle são conectados aos pinos:
 
 | Dedo      | Arduino |
 | --------- | ------: |
-| Polegar   |      D2 |
-| Indicador |      D3 |
-| Médio     |      D4 |
-| Anelar    |      D5 |
-| Mínimo    |      D6 |
+| Polegar   |      D3 |
+| Indicador |      D5 |
+| Médio     |      D6 |
+| Anelar    |      D9 |
+| Mínimo    |      D10 |
 
 ### Alimentação
 
@@ -282,17 +282,17 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
      └──────┬──────┘     │
             │            │
        Sinais            │
-      D2-D6              │
+      D3-D10              │
             │            │
             ▼            ▼
         ┌──────────────────┐
         │    ARDUINO UNO   │
         │                  │
-        │ D2 → Servo 1     │
-        │ D3 → Servo 2     │
-        │ D4 → Servo 3     │
-        │ D5 → Servo 4     │
-        │ D6 → Servo 5     │
+        │ D3 → Servo 1     │
+        │ D5 → Servo 2     │
+        │ D6 → Servo 3     │
+        │ D9 → Servo 4     │
+        │ D10 → Servo 5     │
         │                  │
         │ GND ─────────────┘
         └──────────────────┘
