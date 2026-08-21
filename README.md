@@ -20,28 +20,6 @@ O resultado é um sistema no qual o movimento realizado pelo usuário é reprodu
 
 ---
 
-## 🎯 Objetivos
-
-### Objetivo geral
-
-Desenvolver uma mão robótica de baixo custo controlada por visão computacional, capaz de identificar individualmente os movimentos dos cinco dedos e reproduzi-los por meio de servomotores.
-
-### Objetivos específicos
-
-* Desenvolver uma estrutura mecânica de baixo custo;
-* Utilizar materiais facilmente encontrados para construção da mão;
-* Implementar detecção de mãos utilizando MediaPipe;
-* Identificar individualmente o estado dos cinco dedos;
-* Diferenciar mão esquerda e direita durante a detecção;
-* Criar um sistema de comunicação entre computador e Arduino;
-* Controlar cinco servomotores individualmente;
-* Desenvolver um sistema de tendões utilizando barbante;
-* Utilizar elásticos como mecanismo de retorno dos dedos;
-* Documentar o projeto de maneira que outros estudantes possam reproduzi-lo;
-* Permitir futuras melhorias e modificações no sistema.
-
----
-
 # 🧠 Funcionamento
 
 O funcionamento do projeto pode ser dividido em quatro etapas principais:
