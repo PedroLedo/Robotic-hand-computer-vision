@@ -365,12 +365,11 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 ## 📦 Instalação
 
 faça o download do repositório:
-
-<a href="[URL_DO_SEU_LINK_AQUI](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip)" target="_blank">
-  <button style="background-color: #2ea44f; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; display: inline-flex; align-items: center; gap: 8px;">
-    🚀 Nome do Botão
-  </button>
-</a>
+<p align="center">
+  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/nome-do-seu-arquivo.zip](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip)" style="background-color: #2ea44f; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
+    📥 Baixar Código do Projeto (.zip)
+  </a>
+</p>
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
