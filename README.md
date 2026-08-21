@@ -187,6 +187,7 @@ Cada dedo possui um sistema independente de movimentação.
   <img src="Docs/Imagens/20260821_175730.jpg" alt="Interface do Projeto de Visão Computacional">
 </p>
 
+
 ---
 
 
