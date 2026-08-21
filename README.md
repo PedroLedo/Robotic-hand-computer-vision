@@ -406,14 +406,6 @@ Finalização: Ao final, clique em "Close". A Arduino IDE estará instalada e um
 
 ---
 
-<div align="center">
-
-[![Gravação Primeiro Código](https://img.shields.io/badge/Gravação%20Primeiro%20Código-blue?style=for-the-badge&logo=github)](https://github.com/PedroLedo/Itaquerino/tree/main/material/Conex%C3%A3o_USB_Serial)
-
-</div>
-
----
-
 Faça o download do codigo do Arduino:
 <p align="center">
   <a href="https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip">
