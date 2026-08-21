@@ -366,8 +366,8 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 faça o download do repositório:
 <p align="center">
-  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/nome-do-seu-arquivo.zip](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip)">
-    <img src="https://img.shields.io/badge/📥_Baixar_Código_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
+  <a href="https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip">
+    <img src="https://img.shields.io/badge/📥_Baixar_C%C3%B3digo_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
   </a>
 </p>
 
