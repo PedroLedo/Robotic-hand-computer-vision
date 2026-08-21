@@ -232,9 +232,8 @@ Assim:
 ---
 
 <p align="center">
-  <img src="Docs/Imagens/Elastico.jpg" alt="Interface do Projeto de Visão Computacional">
+  <img src="Docs/Imagens/Elastico.jpg" width="600px" alt="Interface do Projeto de Visão Computacional">
 </p>
-
 ---
 
 
