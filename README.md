@@ -301,7 +301,7 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
 ---
 
 <p align="center">
-  <img src="Docs/Imagens/Captura%20de%20tela%202026-08-21%20172502.png" alt="Interface do Projeto de Visão Computacional">
+  <img src="Docs/Imagens/Design sem nome (1).png" alt="Interface do Projeto de Visão Computacional">
 </p>
 
 
