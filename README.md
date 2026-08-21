@@ -298,6 +298,14 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
         └──────────────────┘
 ```
 
+---
+
+<p align="center">
+  <img src="Docs/Imagens/Captura%20de%20tela%202026-08-21%20172502.png" alt="Interface do Projeto de Visão Computacional">
+</p>
+
+
+---
 > ⚠️ **Importante:** os servomotores não devem ser alimentados diretamente pelos pinos de 5 V do Arduino. Uma fonte externa adequada deve ser utilizada, mantendo o GND comum entre a fonte e o Arduino.
 
 ---
