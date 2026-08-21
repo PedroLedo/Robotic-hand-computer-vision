@@ -24,7 +24,9 @@ O resultado é um sistema no qual o movimento realizado pelo usuário é reprodu
 
 O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
-```text
+<div align="center">
+
+<pre>
 ┌──────────────────┐
 │      CÂMERA      │
 └────────┬─────────┘
@@ -64,7 +66,9 @@ O funcionamento do projeto pode ser dividido em quatro etapas principais:
        ┌─────────────┐
        │ MÃO ROBÓTICA│
        └─────────────┘
-```
+</pre>
+
+</div>
 
 ---
 
