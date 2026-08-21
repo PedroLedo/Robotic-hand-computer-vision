@@ -366,10 +366,13 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 faça o download do repositório:
 <p align="center">
-  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/nome-do-seu-arquivo.zip](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip)" style="background-color: #2ea44f; color: white; padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: bold; display: inline-block; font-family: -apple-system,BlinkMacSystemFont,'Segoe UI',Helvetica,Arial,sans-serif;">
-    📥 Baixar Código do Projeto (.zip)
+  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/nome-do-seu-arquivo.zip](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip)">
+    <img src="https://img.shields.io/badge/📥_Baixar_Código_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
   </a>
 </p>
+
+---
+
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
