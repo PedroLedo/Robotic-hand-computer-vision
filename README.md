@@ -364,7 +364,9 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ## 📦 Instalação
 
-Clone o repositório:
+faça o download do repositório:
+
+[📥 Clique aqui para baixar o código do projeto]([https://github.com/SeuUsuario/Robotic-hand-computer-vision/raw/main/Docs/nome-do-seu-arquivo.zip](https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/refs/heads/main/Docs/Mao_Robotica_com_visao_computacional.zip))
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
