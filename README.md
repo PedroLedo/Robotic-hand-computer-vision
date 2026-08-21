@@ -312,7 +312,11 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
 
 # 🧩 Placa de conexão
 
-Para facilitar a montagem, foi desenvolvida uma pequena placa de distribuição utilizando **placa perfurada**.
+**Opcionalmente,** pode ser desenvolvida uma pequena placa de distribuição utilizando placa perfurada para facilitar a montagem.
+
+<p align="center">
+  <img src="Docs/Imagens/20260821_201507.jpg" width="600px" alt="Interface do Projeto de Visão Computacional">
+</p>
 
 A placa possui:
 
