@@ -116,6 +116,7 @@ Para evitar que qualquer movimento detectado pela câmera seja imediatamente env
 │                                         │
 └─────────────────────────────────────────┘
 ```
+![Demonstração da Interface](Docs/Imagens/Captura%20de%20tela%202026-08-21%20172502.png)
 
 O sistema verifica a posição do pulso.
 
