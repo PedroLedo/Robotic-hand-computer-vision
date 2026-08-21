@@ -229,6 +229,14 @@ Assim:
               ELÁSTICO
               ABERTURA
 ```
+---
+
+<p align="center">
+  <img src="Docs/Imagens/20260821_180211[1].jpg" alt="Interface do Projeto de Visão Computacional">
+</p>
+
+---
+
 
 Quando o servo é acionado, sua força vence a tensão do elástico e o dedo é fechado.
 
