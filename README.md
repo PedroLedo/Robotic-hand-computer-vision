@@ -415,13 +415,82 @@ Faça o download do codigo do Arduino:
 
 ---
 
-Com o codigo já baixado, clique com o botão direito do mouse em "extrair tudo...":
+Com o codigo já baixado, clique com o botão direito do mouse em "extrair tudo..."
 
 <p align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 205137.png" width="600px" alt="Interface do Projeto de Visão Computacional">
 </p>
 
 ---
+
+Após isso, pode-se abrir a IDE do Arduino e usar o atalho "Ctrl + O" para abrir o arquivo que contem o codigo que acabamos de baixar e extrair:
+
+<p align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 210135.png" width="600px" alt="Interface do Projeto de Visão Computacional">
+</p>
+
+Selecione o arquivo e clique em "Abrir"
+
+---
+
+## 🚀 Instalação Driver CH340
+
+Antes de tudo, para que o computador reconheça corretamente a placa Arduino, é necessário realizar o download e a instalação do driver de comunicação. Esse passo é essencial para garantir que a interface entre o computador e a placa funcione de forma adequada durante a compilação e a transferência de dados.
+
+<div align="center">
+  
+[![Download CH340 Driver](https://img.shields.io/badge/Baixar-Driver%20CH340-28a745?style=for-the-badge&logo=download)](https://bitabittecnologia.com.br/wp-content/uploads/2022/05/CH341SER_DRIVER.zip)
+
+</div>
+
+---
+Após o download, descompacte o arquivo, conecte a placa no computador e execute o instalador como administrador. Esse passo é essencial para garantir que o driver seja instalado corretamente e que o sistema reconheça o dispositivo sem falhas.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/d9867847-abd6-4880-bf47-80358e56789a" alt="Texto alternativo" width="600">
+</div>
+
+---
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/a46d4d75-529b-48b7-a7e8-ec75efa76f2e" width="600">
+</div>
+
+---
+Durante a instalação, autorize o instalador a fazer modificações no seu computador. Essa permissão é necessária para que o driver seja corretamente configurado e integrado ao sistema operacional. Por fim, clique em "Install" para concluir o processo. Após essa etapa, o driver estará pronto para uso e sua placa poderá ser reconhecida corretamente pelo sistema.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3a0b4934-9c11-45cf-a867-7224cd574461" width="600">
+</div>
+
+---
+
+## 🔍 Verificando a instalação e a porta COM
+
+Para confirmar se o processo foi concluído com sucesso e identificar em qual porta COM o Itaquerino está conectado:
+
+Clique com o botão direito do mouse no ícone do Windows.
+
+Selecione Gerenciador de Dispositivos.
+
+Na lista, expanda a seção Portas (COM e LPT).
+
+Verifique se o conversor aparece listado e observe o número da porta COM atribuída.
+
+Essa informação será útil para configurar corretamente a comunicação com a placa durante a compilação.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/b6896d3b-2dd7-4fef-bf18-e64a1723e475" width="600">
+</div>
+
+---
+
+No exemplo acima, a porta aparece como COM10, mas esse número pode variar dependendo da porta USB utilizada e do computador. O importante é identificar corretamente qual porta foi atribuída ao Itaquerino.
+
+Com essa informação em mãos, você já pode abrir a Arduino IDE e configurar a porta correta para seguir com os próximos passos da programação.
+
+---
+
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
