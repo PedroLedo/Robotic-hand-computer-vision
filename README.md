@@ -536,6 +536,23 @@ Após isso, basta clicar em upload, "A seta apontando para a direita"
 
 ---
 
+tudo estando correto, seu codigo sera Transferido para o Arduino.
+
+---
+
+## Instalando o Visual Studio Code
+Esse ide, serve para porgramarmos nossa visão computacioonal, ela ira rodar me python, funcionando no porprio hardware do coomputador, é necessario ter uma webcam conectada ao pc, ou se for um notebook a camera embutida ja é o suficiente.
+
+faça o dowload do VsCode aqui:
+
+<p align="center">
+<a href="[https://www.arduino.cc/en/software](https://code.visualstudio.com/download?_exp_download=d53503e735)" target="_blank" title="Baixar Arduino IDE">
+<img src="https://img.shields.io/badge/VSCode%20IDE-Download-00979D?style=for-the-badge&logo=VSCode" alt="Baixar VSCode"/>
+</a>
+</p>
+
+
+
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
 ```
