@@ -491,6 +491,44 @@ Com essa informação em mãos, você já pode abrir a Arduino IDE e configurar 
 
 ---
 
+Dentro da ide, com oo codigo aberto, vamos selecionar a placa e a porta em que ela esta se comunicando:
+
+## 🛠️ Selecionando a porta COM na Arduino IDE
+
+Com a Arduino IDE aberta, siga os passos abaixo para configurar a porta correta:
+
+Clique no menu Tools (Ferramentas).
+
+Vá até a opção Port (Porta).
+
+Selecione a porta COM que foi identificada anteriormente no Gerenciador de Dispositivos.
+
+Essa configuração é essencial para garantir que o código seja corretamente enviado à placa Itaquerino.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/37ab16a7-55be-4de7-8d87-9f9bde1bf2fb" width="600">
+</div>
+
+---
+## 🔧 Selecionando o modelo de placa na Arduino IDE
+
+Com a porta COM já configurada, o próximo passo é selecionar o modelo de placa correto. O Itaquerino utiliza o mesmo chip do Arduino Uno, o que o torna totalmente compatível com as definições padrão da IDE.
+
+Para isso:
+
+Acesse o menu Tools (Ferramentas).
+
+Vá até Board (Placa).
+
+Em Arduino AVR Boards, selecione Arduino Uno.
+
+Essa configuração garante que o código seja compilado e enviado corretamente para a placa.
+
+<div align="center">
+  <img src="https://github.com/user-attachments/assets/3b2628e6-d8cf-4d8e-9b1a-f0ce0efcc621" width="600">
+</div>
+
+---
 
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
