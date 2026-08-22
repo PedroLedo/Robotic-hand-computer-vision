@@ -503,8 +503,6 @@ Vá até a opção Port (Porta).
 
 Selecione a porta COM que foi identificada anteriormente no Gerenciador de Dispositivos.
 
-Essa configuração é essencial para garantir que o código seja corretamente enviado à placa Itaquerino.
-
 <div align="center">
   <img src="https://github.com/user-attachments/assets/37ab16a7-55be-4de7-8d87-9f9bde1bf2fb" width="600">
 </div>
