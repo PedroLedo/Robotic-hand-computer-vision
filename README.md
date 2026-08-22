@@ -558,15 +558,15 @@ após realizar o donwload, execulte o .exe, e abra o VsCode apos finalizar o Dow
 
 com o software aberto, faça o download do codigo responsavel pela visão computacional:
 
-
-Faça o download do codigo da visão computacional:
 <p align="center">
-  <a href="https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip">
+  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip](https://drive.google.com/file/d/1aP7PeyLjqsgB7ZnouBVD599dWVqM8FzI/view?usp=drive_link)">
     <img src="https://img.shields.io/badge/📥_Baixar_C%C3%B3digo_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
   </a>
 </p>
 
 ---
+
+Descompacte o arquivo:
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 220650.png" width="600">
@@ -574,7 +574,9 @@ Faça o download do codigo da visão computacional:
 
 ---
 
-Com ele aberto, use tambem o atalho "Ctrl + O" e abra o arquivo da visão cimputacional
+Voltando ao software... com ele aberto, use tambem o atalho "Ctrl + O" e abra o arquivo da visão computacional
+
+
 
 ```bash
 winget install -e --id Python.Python.3.11 --version 3.11.9
