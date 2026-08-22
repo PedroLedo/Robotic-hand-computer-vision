@@ -786,6 +786,6 @@ Projeto desenvolvido na área de **Automação, Robótica e Visão Computacional
 
 ---
 
-⭐ **Se este projeto foi útil para você, consIDEre deixar uma estrela no repositório e compartilhar com outros estudantes.**
+⭐ **Se este projeto foi útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.**
 
 > **Aprender fazendo. Documentar para ensinar. Compartilhar para evoluir.**
