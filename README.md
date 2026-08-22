@@ -496,7 +496,7 @@ Antes de tudo, caso sua placa utilize o conversor USB–serial CH340/CH341, inst
 
 <div align="center">
   
-[![Download CH340 Driver](https://img.shields.io/badge/Baixar-Driver%20CH340-28a745?style=for-the-badge&logo=download)](https://www.wch.cn/downloads/)
+[![Download CH340 Driver](https://img.shields.io/badge/Baixar-Driver%20CH340-28a745?style=for-the-badge&logo=download)](https://bitabittecnologia.com.br/wp-content/uploads/2022/05/CH341SER_DRIVER.zip)
 
 </div>
 
