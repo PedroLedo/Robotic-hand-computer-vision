@@ -528,6 +528,14 @@ Essa configuração garante que o código seja compilado e enviado corretamente 
 
 ---
 
+Após isso, basta clicar em upload, "A seta apontando para a direita"
+
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 211529.png" width="600">
+</div>
+
+---
+
 ```bash
 git clone https://github.com/SEU-USUARIO/mao-robotica-visao-computacional.git
 ```
