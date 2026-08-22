@@ -576,49 +576,83 @@ Descompacte o arquivo:
 
 Voltando ao software... com ele aberto, use tambem o atalho "Ctrl + O" e abra o arquivo da visão computacional
 
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 221824.png" width="600">
+</div>
 
+---
+
+Com o arquivo aberto, clique em "Terminal" e em "New terminal"
+
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 222112.png" width="600">
+</div>
+
+isso abrira um terminal onde iremos dar os comandos para o funcionamento do projeto
+
+---
+
+Com o terminal Aberto, execulte os seguintes comandos:
 
 ```bash
 winget install -e --id Python.Python.3.11 --version 3.11.9
 ```
 
-Entre na pasta:
-
-```bash
-cd mao-robotica-visao-computacional
-```
-
-Instale as bibliotecas Python:
-
-```bash
-pip install opencv-python mediapipe pyserial
-```
+Apos execultar o codigo acima, vc tera baixado o Python na versão 3.11.9, versão para melhor desempenho do projeto.
 
 ---
 
-# 🔌 Configuração da porta serial
+Apos isso, para o proximo comando é necessario ir até a pasta em que vc extraiu o codigo da visão computacional, e copiar o caminho dele:
 
-O programa atualmente utiliza:
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 222735.png" width="600">
+</div>
 
-```python
-serial.Serial('COM8', 9600)
+copie todo o caminho e cole no terminal logo apos de digitar o comando ( cd " " ) assim como demosntrado no exemplo abaixo:
+
+```bash
+cd "Caminho que você copiou deve ficar aqui!!"
+```
+O seu deve ficar semelhante ao da imagem, lembrando que o usuario muda de pc para pc:
+
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 223625.png" width="600">
+</div>
+
+Apos essa etapa, execulte o seguinte comando:
+
+```bash
+Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
 ```
 
-Caso o Arduino esteja conectado em outra porta, altere:
+e em seguida:
 
-```python
-'COM8'
+```bash
+.\venv\Scripts\Activate.ps1
 ```
+Se tudo ocorrer bem, seu terminal ficara semelhate ao da imagem abaixo:
 
-para a porta correspondente ao seu computador.
-
-A comunicação utiliza:
-
-```text
-Baud Rate: 9600
-```
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 224225.png" width="600">
+</div>
 
 ---
+
+com seu terminal devidamente configurado, podemos começar a executa-lo, porém antes é necessario, fechar a ide do Arduino, pois ela pode causar interferencia na comunicação serial. tambem é necessario mudar a sua porta com definida no codigo para a que voce ja tinha visto antes, la no gerenciador de dispositivos. 
+
+como mostra na imagem, se sua porta COM for diferente, troque o numero que esta no codigo pelo oq voçê pegou no gerenciador de dispositivos:
+
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-21 224823.png" width="600">
+</div>
+
+----
+com tudo devidamente configurado, execulte o seguinte comando no terminal:
+
+```python
+python Visao_Computacional.py
+```
+Sua WEbCam ira abrir, e o sistema ira Começar a funcionar!!
 
 # 🧪 Modo de teste
 
@@ -637,34 +671,6 @@ Movimentos continuam sendo detectados
 ```
 
 Isso permite testar a parte de visão computacional antes de montar a parte eletrônica.
-
----
-
-# ▶️ Executando o projeto
-
-Depois de conectar a câmera:
-
-```bash
-python main.py
-```
-
-Uma janela será aberta mostrando a imagem da câmera.
-
-O programa apresenta:
-
-* Área de controle;
-* Estado da conexão;
-* Comando atual;
-* Estado individual dos cinco dedos;
-* Detecção da mão;
-* Posição do pulso;
-* Informações de controle.
-
-Para encerrar o programa:
-
-```text
-ESC
-```
 
 ---
 
@@ -714,162 +720,6 @@ O funcionamento completo pode ser resumido da seguinte maneira:
               ▼
        MÃO ROBÓTICA
 ```
-
----
-
-# 🗂️ Estrutura do repositório
-
-A estrutura será organizada para separar software, eletrônica, mecânica e documentação:
-
-```text
-mao-robotica-visao-computacional/
-│
-├── README.md
-│
-├── software/
-│   ├── main.py
-│   └── requirements.txt
-│
-├── arduino/
-│   └── controle_servos/
-│       └── controle_servos.ino
-│
-├── hardware/
-│   ├── esquemas/
-│   ├── placa/
-│   └── fotos/
-│
-├── mecanica/
-│   ├── montagem/
-│   └── modelos/
-│
-└── docs/
-    ├── montagem.md
-    ├── funcionamento.md
-    └── testes.md
-```
-
----
-
-# 🚧 Status do projeto
-
-**Em desenvolvimento**
-
-### Concluído
-
-* [x] Detecção da mão por câmera
-* [x] Detecção dos dedos
-* [x] Identificação de mão esquerda e direita
-* [x] Controle individual dos cinco dedos
-* [x] Comunicação Python → Arduino
-* [x] Controle dos cinco canais
-* [x] Protótipo mecânico em papelão
-* [x] Sistema de tendões com barbante
-* [x] Sistema de retorno com elásticos
-* [x] Alimentação externa dos servomotores
-* [x] Placa de conexão em placa perfurada
-* [x] Modo de teste sem Arduino
-
-### Em desenvolvimento
-
-* [ ] Melhorias na estrutura mecânica
-* [ ] Ajuste dos ângulos dos servomotores
-* [ ] Calibração individual dos dedos
-* [ ] Otimização dos movimentos
-* [ ] Testes de precisão
-* [ ] Melhorias na documentação
-* [ ] Testes de longo período
-* [ ] Melhorias na estrutura da mão
-
----
-
-# 🎓 Projeto educacional
-
-Um dos principais objetivos deste projeto é possibilitar que **outros estudantes possam reproduzir o sistema utilizando materiais acessíveis**.
-
-A escolha de materiais como:
-
-* papelão;
-* barbante;
-* elástico;
-* placa perfurada;
-* jumpers;
-* servomotores de baixo custo;
-
-permite construir um protótipo funcional sem a necessidade de equipamentos industriais ou processos de fabricação complexos.
-
-O projeto também permite estudar, em um único sistema, conceitos de:
-
-**Programação + Visão Computacional + Eletrônica + Sistemas Embarcados + Robótica + Mecânica**
-
-A documentação será desenvolvida de forma progressiva para que cada etapa possa ser reproduzida independentemente.
-
----
-
-# 🔬 Possibilidades de evolução
-
-O projeto foi desenvolvido de forma modular, permitindo diversas melhorias futuras.
-
-Entre elas:
-
-* Substituição da estrutura de papelão por uma estrutura impressa em 3D;
-* Desenvolvimento de uma PCB dedicada;
-* Controle mais preciso da posição dos servos;
-* Calibração automática;
-* Controle proporcional dos movimentos;
-* Identificação de gestos completos;
-* Comunicação sem fio;
-* Utilização de microcontroladores com maior capacidade de processamento;
-* Desenvolvimento de uma interface gráfica;
-* Implementação de sensores de posição ou força;
-* Desenvolvimento de diferentes modelos mecânicos de dedos.
-
----
-
-# 🤝 Contribuições
-
-Contribuições são bem-vindas!
-
-Você pode contribuir com:
-
-* Melhorias no código;
-* Novos métodos de detecção;
-* Melhorias mecânicas;
-* Novos projetos de dedos;
-* Melhorias eletrônicas;
-* Correções;
-* Documentação;
-* Testes;
-* Sugestões de novas funcionalidades.
-
-Caso você desenvolva uma versão diferente da mão, compartilhe sua experiência para que outras pessoas também possam aprender com ela.
-
----
-
-# ⚠️ Segurança
-
-Este projeto possui finalidade **educacional e experimental**.
-
-Os servomotores devem possuir uma fonte de alimentação adequada e não devem ser alimentados diretamente pelos pinos de alimentação do Arduino quando a corrente necessária exceder a capacidade da placa.
-
-Antes de realizar a montagem:
-
-* Verifique a polaridade da alimentação;
-* Confira todas as conexões;
-* Utilize uma fonte adequada;
-* Mantenha o GND da fonte e do Arduino em comum;
-* Evite prender os dedos durante os testes;
-* Limite os movimentos dos servos para evitar esforços mecânicos excessivos.
-
----
-
-# 📜 Licença
-
-Este projeto será disponibilizado como um projeto de código aberto.
-
-A licença definitiva será definida conforme a publicação da versão final do repositório.
-
----
 
 # 👨‍💻 Autor
 
