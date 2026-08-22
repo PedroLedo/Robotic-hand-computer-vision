@@ -397,30 +397,69 @@ Primeiro, você precisa baixar o instalador correto para o seu sistema operacion
 </a>
 </p>
 
-Ao clicar no botão, você será direcionado para a página de downloads.
-Procure pela Arduino IDE 2.x. Esta é a versão mais moderna, rápida e com recursos úteis como autocompletar código, o que facilita muito a programação.
-O site geralmente detecta seu sistema operacional (Windows, macOS ou Linux) e sugere o download correto. Clique na opção correspondente para iniciar o download.
+<div align="center">
 
- Para Windows
-Execute o Instalador: Após o download, você terá um arquivo .exe. Dê um duplo clique para iniciá-lo.
+### 📥 Instalando a Arduino IDE
 
-![Texto alternativo](https://github.com/user-attachments/assets/c03e41eb-e088-4a20-a113-2372ea6b3994)
+Ao clicar no botão abaixo, você será direcionado para a página oficial de downloads.
 
-Contrato de Licença: Concorde com os termos da licença para continuar.
+Recomenda-se instalar a **Arduino IDE 2.x**, a versão mais moderna da plataforma, com recursos como autocompletar código, depuração aprimorada e melhor desempenho.
 
-![Texto alternativo](https://github.com/user-attachments/assets/89f2e10e-3cd0-4a11-952e-927a2d0a5bd6)
+O site detecta automaticamente seu sistema operacional (**Windows, macOS ou Linux**). Basta selecionar a opção correspondente para iniciar o download.
 
-Selecione para qual usuário deseja instalar.
+</div>
 
-![Texto alternativo](https://github.com/user-attachments/assets/24cd2198-c594-4dfa-8c32-5e8f6c170d5e)
+---
 
-Diretório de Instalação: Escolha onde o programa será instalado (o local padrão é geralmente a melhor opção) e clique em "Install".
+## 🪟 Instalação no Windows
 
-![Texto alternativo](https://github.com/user-attachments/assets/6831f522-276e-4ed2-a73c-299c2407f12b)
+<div align="center">
 
-Confirmação de Drivers: Durante o processo, o Windows pode pedir sua permissão para instalar os drivers da Arduino. Confirme e autorize todas as solicitações.
+### 1. Execute o instalador
 
-Finalização: Ao final, clique em "Close". A Arduino IDE estárá instalada e um atalho terá sido criado na sua área de trabalho.
+Após o download, abra o arquivo `.exe` com um duplo clique.
+
+<img src="https://github.com/user-attachments/assets/c03e41eb-e088-4a20-a113-2372ea6b3994" width="700"/>
+
+---
+
+### 2. Aceite o contrato de licença
+
+Leia os termos de uso e clique em **I Agree** para continuar.
+
+<img src="https://github.com/user-attachments/assets/89f2e10e-3cd0-4a11-952e-927a2d0a5bd6" width="700"/>
+
+---
+
+### 3. Escolha o usuário da instalação
+
+Selecione se a Arduino IDE será instalada apenas para o usuário atual ou para todos os usuários do computador.
+
+<img src="https://github.com/user-attachments/assets/24cd2198-c594-4dfa-8c32-5e8f6c170d5e" width="700"/>
+
+---
+
+### 4. Defina o diretório de instalação
+
+Mantenha o local padrão (recomendado) ou escolha outra pasta e clique em **Install**.
+
+<img src="https://github.com/user-attachments/assets/6831f522-276e-4ed2-a73c-299c2407f12b" width="700"/>
+
+---
+
+### 5. Autorize a instalação dos drivers
+
+Durante a instalação, o Windows poderá solicitar permissão para instalar os drivers oficiais da Arduino. Autorize todas as solicitações para garantir o funcionamento correto da placa.
+
+---
+
+### 6. Conclusão
+
+Ao finalizar, clique em **Close**.
+
+✅ A Arduino IDE estará instalada e um atalho será criado automaticamente na sua área de trabalho.
+
+</div>
 
 ---
 
