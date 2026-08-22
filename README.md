@@ -4,11 +4,29 @@
 
 ---
 
+## 📑 Índice
+
+- [Sobre o projeto](#-sobre-o-projeto)
+- [Funcionamento](#-funcionamento)
+- [Visão computacional](#-visão-computacional)
+- [Área de controle](#-área-de-controle)
+- [Sistema de comandos](#-sistema-de-comandos)
+- [Sistema mecânico](#-sistema-mecânico)
+- [Eletrônica](#-eletrônica)
+- [Placa de conexão](#-placa-de-conexão)
+- [Componentes](#-componentes)
+- [Software](#-software)
+- [Instalação](#-instalação)
+- [Primeiros passos](#-primeiros-passos)
+- [Modo de teste](#-modo-de-teste)
+- [Fluxo completo](#-fluxo-completo)
+- [Autor](#-autor)
+
 ## 📖 Sobre o projeto
 
 Este projeto consiste no desenvolvimento de uma **mão robótica capaz de reproduzir individualmente os movimentos dos cinco dedos de uma mão humana utilizando visão computacional**.
 
-Uma câmera captura os movimentos realizados pelo usuário. O computador utiliza **Python, OpenCV e MediaPipe** para identificar a mão e determinar individualmente o estado de cada dedo.
+Uma câmera captura os movimentos realizados pelo usuário. O computador utiliza **Python, OpenCV e MediaPipe** para IDEntificar a mão e determinar individualmente o estádo de cada dedo.
 
 As informações são convertidas em um comando de cinco posições e enviadas através de comunicação serial para um **Arduino Uno**.
 
@@ -20,7 +38,7 @@ O resultado é um sistema no qual o movimento realizado pelo usuário é reprodu
 
 ---
 
-# 🧠 Funcionamento
+## 🧠 Funcionamento
 
 O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
@@ -72,7 +90,7 @@ O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
 ---
 
-# 👁️ Visão Computacional
+## 👁️ Visão Computacional
 
 A visão computacional é executada no computador utilizando:
 
@@ -81,7 +99,7 @@ A visão computacional é executada no computador utilizando:
 * **MediaPipe**
 * **PySerial**
 
-O MediaPipe Hands é responsável por identificar a mão e suas principais articulações.
+O MediaPipe Hands é responsável por IDEntificar a mão e suas principais articulações.
 
 O programa analisa a posição dos pontos detectados para determinar se cada dedo está levantado ou abaixado.
 
@@ -95,11 +113,11 @@ São analisados individualmente:
 
 A detecção funciona tanto para a **mão esquerda quanto para a mão direita**.
 
-A lógica do polegar é ajustada de acordo com o lado identificado pelo MediaPipe, enquanto os demais dedos são analisados utilizando suas posições relativas no eixo vertical.
+A lógica do polegar é ajustada de acordo com o lado IDEntificado pelo MediaPipe, enquanto os demais dedos são analisados utilizando suas posições relativas no eixo vertical.
 
 ---
 
-# 🎯 Área de controle
+## 🎯 Área de controle
 
 Para evitar que qualquer movimento detectado pela câmera seja imediatamente enviado para a mão robótica, o software possui uma **área de controle delimitada na imagem**.
 
@@ -138,7 +156,7 @@ Dessa maneira, o usuário pode posicionar a mão na área definida antes de come
 
 ---
 
-# 🔢 Sistema de comandos
+## 🔢 Sistema de comandos
 
 Cada dedo possui um bit no comando enviado ao Arduino.
 
@@ -148,7 +166,7 @@ A sequência utilizada é:
 Polegar → Indicador → Médio → Anelar → Mínimo
 ```
 
-Cada posição pode assumir dois estados:
+Cada posição pode assumir dois estádos:
 
 ```text
 0 = Aberto
@@ -175,7 +193,7 @@ O comando é enviado continuamente enquanto uma mão válida estiver dentro da �
 
 ---
 
-# ⚙️ Sistema mecânico
+## ⚙️ Sistema mecânico
 
 A estrutura da mão foi construída utilizando **papelão**, tornando o projeto simples e acessível para reprodução.
 
@@ -244,7 +262,7 @@ Quando o servo retorna, o elástico auxilia o dedo a voltar para a posição abe
 
 ---
 
-# 🔌 Eletrônica
+## 🔌 Eletrônica
 
 O sistema utiliza um **Arduino Uno** para controlar os cinco servomotores.
 
@@ -310,7 +328,7 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
 
 ---
 
-# 🧩 Placa de conexão
+## 🧩 Placa de conexão
 
 **Opcionalmente,** pode ser desenvolvida uma pequena placa de distribuição utilizando placa perfurada para facilitar a montagem.
 
@@ -330,7 +348,7 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ---
 
-# 🛠️ Componentes
+## 🛠️ Componentes
 
 | Componente         | Quantidade | Função                               |
 | ------------------ | ---------: | ------------------------------------ |
@@ -349,7 +367,7 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ---
 
-# 💻 Software
+## 💻 Software
 
 ## Tecnologias
 
@@ -364,7 +382,7 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ## 📦 Instalação
 
-# 🧭 Primeiros Passos
+## 🧭 Primeiros Passos
 
 ---
 
@@ -402,11 +420,11 @@ Diretório de Instalação: Escolha onde o programa será instalado (o local pad
 
 Confirmação de Drivers: Durante o processo, o Windows pode pedir sua permissão para instalar os drivers da Arduino. Confirme e autorize todas as solicitações.
 
-Finalização: Ao final, clique em "Close". A Arduino IDE estará instalada e um atalho terá sido criado na sua área de trabalho.
+Finalização: Ao final, clique em "Close". A Arduino IDE estárá instalada e um atalho terá sido criado na sua área de trabalho.
 
 ---
 
-Faça o download do codigo do Arduino:
+Faça o download do código do Arduino:
 <p align="center">
   <a href="https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip">
     <img src="https://img.shields.io/badge/📥_Baixar_C%C3%B3digo_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
@@ -415,7 +433,7 @@ Faça o download do codigo do Arduino:
 
 ---
 
-Com o codigo já baixado, clique com o botão direito do mouse em "extrair tudo..."
+Com o código já baixado, clique com o botão direito do mouse em "extrair tudo..."
 
 <p align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 205137.png" width="600px" alt="Interface do Projeto de Visão Computacional">
@@ -423,7 +441,7 @@ Com o codigo já baixado, clique com o botão direito do mouse em "extrair tudo.
 
 ---
 
-Após isso, pode-se abrir a IDE do Arduino e usar o atalho "Ctrl + O" para abrir o arquivo que contem o codigo que acabamos de baixar e extrair:
+Após isso, pode-se abrir a IDE do Arduino e usar o atalho "Ctrl + O" para abrir o arquivo que contém o código que acabamos de baixar e extrair:
 
 <p align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 210135.png" width="600px" alt="Interface do Projeto de Visão Computacional">
@@ -435,11 +453,11 @@ Selecione o arquivo e clique em "Abrir"
 
 ## 🚀 Instalação Driver CH340
 
-Antes de tudo, para que o computador reconheça corretamente a placa Arduino, é necessário realizar o download e a instalação do driver de comunicação. Esse passo é essencial para garantir que a interface entre o computador e a placa funcione de forma adequada durante a compilação e a transferência de dados.
+Antes de tudo, caso sua placa utilize o conversor USB–serial CH340/CH341, instale o respectivo driver para que o computador consiga reconhecê-la corretamente. Esse passo é essencial para garantir que a interface entre o computador e a placa funcione de forma adequada durante a compilação e a transferência de dados.
 
 <div align="center">
   
-[![Download CH340 Driver](https://img.shields.io/badge/Baixar-Driver%20CH340-28a745?style=for-the-badge&logo=download)](https://bitabittecnologia.com.br/wp-content/uploads/2022/05/CH341SER_DRIVER.zip)
+[![Download CH340 Driver](https://img.shields.io/badge/Baixar-Driver%20CH340-28a745?style=for-the-badge&logo=download)](https://www.wch.cn/downloads/)
 
 </div>
 
@@ -457,7 +475,7 @@ Após o download, descompacte o arquivo, conecte a placa no computador e execute
 </div>
 
 ---
-Durante a instalação, autorize o instalador a fazer modificações no seu computador. Essa permissão é necessária para que o driver seja corretamente configurado e integrado ao sistema operacional. Por fim, clique em "Install" para concluir o processo. Após essa etapa, o driver estará pronto para uso e sua placa poderá ser reconhecida corretamente pelo sistema.
+Durante a instalação, autorize o instalador a fazer modificações no seu computador. Essa permissão é necessária para que o driver seja corretamente configurado e integrado ao sistema operacional. Por fim, clique em "Install" para concluir o processo. Após essa etapa, o driver estárá pronto para uso e sua placa poderá ser reconhecida corretamente pelo sistema.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/3a0b4934-9c11-45cf-a867-7224cd574461" width="600">
@@ -467,7 +485,7 @@ Durante a instalação, autorize o instalador a fazer modificações no seu comp
 
 ## 🔍 Verificando a instalação e a porta COM
 
-Para confirmar se o processo foi concluído com sucesso e identificar em qual porta COM o Itaquerino está conectado:
+Para confirmar se o processo foi concluído com sucesso e IDEntificar em qual porta COM o Itaquerino está conectado:
 
 Clique com o botão direito do mouse no ícone do Windows.
 
@@ -485,13 +503,13 @@ Essa informação será útil para configurar corretamente a comunicação com a
 
 ---
 
-No exemplo acima, a porta aparece como COM10, mas esse número pode variar dependendo da porta USB utilizada e do computador. O importante é identificar corretamente qual porta foi atribuída ao Itaquerino.
+No exemplo acima, a porta aparece como COM10, mas esse número pode variar dependendo da porta USB utilizada e do computador. O importante é IDEntificar corretamente qual porta foi atribuída ao Itaquerino.
 
 Com essa informação em mãos, você já pode abrir a Arduino IDE e configurar a porta correta para seguir com os próximos passos da programação.
 
 ---
 
-Dentro da ide, com oo codigo aberto, vamos selecionar a placa e a porta em que ela esta se comunicando:
+Dentro da IDE, com oo código aberto, vamos selecionar a placa e a porta em que ela está se comunicando:
 
 ## 🛠️ Selecionando a porta COM na Arduino IDE
 
@@ -501,7 +519,7 @@ Clique no menu Tools (Ferramentas).
 
 Vá até a opção Port (Porta).
 
-Selecione a porta COM que foi identificada anteriormente no Gerenciador de Dispositivos.
+Selecione a porta COM que foi IDEntificada anteriormente no Gerenciador de Dispositivos.
 
 <div align="center">
   <img src="https://github.com/user-attachments/assets/37ab16a7-55be-4de7-8d87-9f9bde1bf2fb" width="600">
@@ -510,7 +528,7 @@ Selecione a porta COM que foi identificada anteriormente no Gerenciador de Dispo
 ---
 ## 🔧 Selecionando o modelo de placa na Arduino IDE
 
-Com a porta COM já configurada, o próximo passo é selecionar o modelo de placa correto. O Itaquerino utiliza o mesmo chip do Arduino Uno, o que o torna totalmente compatível com as definições padrão da IDE.
+Com a porta COM já configurada, o próximo passo é selecionar o modelo de placa correto. Para este projeto, selecione Arduino Uno nas definições da IDE.
 
 Para isso:
 
@@ -528,7 +546,7 @@ Essa configuração garante que o código seja compilado e enviado corretamente 
 
 ---
 
-Após isso, basta clicar em upload, "A seta apontando para a direita"
+Após isso, basta clicar em upload, "a seta apontando para a direita"
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 212048.png" width="600">
@@ -536,30 +554,30 @@ Após isso, basta clicar em upload, "A seta apontando para a direita"
 
 ---
 
-tudo estando correto, seu codigo sera Transferido para o Arduino.
+tudo estándo correto, seu código sera transferido para o Arduino.
 
 ---
 
 ## Instalando o Visual Studio Code
-Esse ide, serve para porgramarmos nossa visão computacioonal, ela ira rodar me python, funcionando no porprio hardware do coomputador, é necessario ter uma webcam conectada ao pc, ou se for um notebook a camera embutida ja é o suficiente.
+Esse IDE, serve para programarmos nossa visão computacional, ela ira rodar me python, funcionando no próprio hardware do coomputador, é necessário ter uma webcam conectada ao pc, ou se for um notebook a camera embutida ja é o suficiente.
 
-faça o dowload do VsCode aqui:
+faça o download do VsCode aqui:
 
 <p align="center">
-<a href="[https://www.arduino.cc/en/software](https://code.visualstudio.com/download?_exp_download=d53503e735)" target="_blank" title="Baixar Arduino IDE">
+<a href="https://code.visualstudio.com/download" target="_blank" title="Baixar Arduino IDE">
 <img src="https://img.shields.io/badge/VSCode%20IDE-Download-00979D?style=for-the-badge&logo=VSCode" alt="Baixar VSCode"/>
 </a>
 </p>
 
 
-após realizar o donwload, execulte o .exe, e abra o VsCode apos finalizar o Download do Software
+após realizar o download, execute o .exe, e abra o VsCode após finalizar o Download do Software
 
 ---
 
-com o software aberto, faça o download do codigo responsavel pela visão computacional:
+Com o software aberto, faça o download do código responsável pela visão computacional:
 
 <p align="center">
-  <a href="[https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip](https://drive.google.com/file/d/1aP7PeyLjqsgB7ZnouBVD599dWVqM8FzI/view?usp=drive_link)">
+  <a href="https://github.com/PedroLedo/Robotic-hand-computer-vision/raw/main/Docs/Mao_Robotica_com_visao_computacional.zip">
     <img src="https://img.shields.io/badge/📥_Baixar_C%C3%B3digo_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
   </a>
 </p>
@@ -574,7 +592,7 @@ Descompacte o arquivo:
 
 ---
 
-Voltando ao software... com ele aberto, use tambem o atalho "Ctrl + O" e abra o arquivo da visão computacional
+Voltando ao software... com ele aberto, use também o atalho "Ctrl + O" e abra o arquivo da visão computacional
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 221824.png" width="600">
@@ -588,27 +606,27 @@ Com o arquivo aberto, clique em "Terminal" e em "New terminal"
   <img src="Docs/Imagens/Captura de tela 2026-08-21 222112.png" width="600">
 </div>
 
-isso abrira um terminal onde iremos dar os comandos para o funcionamento do projeto
+Isso abrirá um terminal integrado, no qual serão executados os comandos necessários para o funcionamento do projeto.
 
 ---
 
-Com o terminal Aberto, execulte os seguintes comandos:
+Com o terminal aberto, execute o seguinte comando:
 
 ```bash
 winget install -e --id Python.Python.3.11 --version 3.11.9
 ```
 
-Apos execultar o codigo acima, vc tera baixado o Python na versão 3.11.9, versão para melhor desempenho do projeto.
+Após executar o código acima, você tera baixado o Python na versão 3.11.9, versão para melhor desempenho do projeto.
 
 ---
 
-Apos isso, para o proximo comando é necessario ir até a pasta em que vc extraiu o codigo da visão computacional, e copiar o caminho dele:
+Após isso, para o proximo comando é necessário ir até a pasta em que você extraiu o código da visão computacional, e copiar o caminho dele:
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 222735.png" width="600">
 </div>
 
-copie todo o caminho e cole no terminal logo apos de digitar o comando ( cd " " ) assim como demosntrado no exemplo abaixo:
+copie todo o caminho e cole no terminal logo após de digitar o comando ( cd " " ) assim como demonstrado no exemplo abaixo:
 
 ```bash
 cd "Caminho que você copiou deve ficar aqui!!"
@@ -619,7 +637,7 @@ O seu deve ficar semelhante ao da imagem, lembrando que o usuario muda de pc par
   <img src="Docs/Imagens/Captura de tela 2026-08-21 223625.png" width="600">
 </div>
 
-Apos essa etapa, execulte o seguinte comando:
+Após essa etapa, execute o seguinte comando:
 
 ```bash
 Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
@@ -630,7 +648,7 @@ e em seguida:
 ```bash
 .\venv\Scripts\Activate.ps1
 ```
-Se tudo ocorrer bem, seu terminal ficara semelhate ao da imagem abaixo:
+Se tudo ocorrer bem, seu terminal ficara semelhante ao da imagem abaixo:
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 224225.png" width="600">
@@ -638,21 +656,21 @@ Se tudo ocorrer bem, seu terminal ficara semelhate ao da imagem abaixo:
 
 ---
 
-com seu terminal devidamente configurado, podemos começar a executa-lo, porém antes é necessario, fechar a ide do Arduino, pois ela pode causar interferencia na comunicação serial. tambem é necessario mudar a sua porta com definida no codigo para a que voce ja tinha visto antes, la no gerenciador de dispositivos. 
+com seu terminal devidamente configurado, podemos começar a executa-lo, porém, antes, é necessário, fechar a IDE do Arduino, pois ela pode causar interferencia na comunicação serial. também é necessário mudar a sua porta com definida no código para a que voce ja tinha visto antes, la no gerenciador de dispositivos. 
 
-como mostra na imagem, se sua porta COM for diferente, troque o numero que esta no codigo pelo oq voçê pegou no gerenciador de dispositivos:
+como mostra na imagem, se sua porta COM for diferente, tro queue o numero que está no código pelo o que você pegou no gerenciador de dispositivos:
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 224823.png" width="600">
 </div>
 
 ----
-com tudo devidamente configurado, execulte o seguinte comando no terminal:
+com tudo devidamente configurado, execute o seguinte comando no terminal:
 
 ```python
 python Visao_Computacional.py
 ```
-Sua WEbCam ira abrir, e o sistema ira Começar a funcionar!!
+Sua webcam ira abrir, e o sistema ira começar a funcionar!!
 
 # 🧪 Modo de teste
 
@@ -670,11 +688,11 @@ Câmera continua funcionando
 Movimentos continuam sendo detectados
 ```
 
-Isso permite testar a parte de visão computacional antes de montar a parte eletrônica.
+Isso permite testár a parte de visão computacional antes de montar a parte eletrônica.
 
 ---
 
-# 🔄 Fluxo completo
+## 🔄 Fluxo completo
 
 O funcionamento completo pode ser resumido da seguinte maneira:
 
@@ -721,7 +739,7 @@ O funcionamento completo pode ser resumido da seguinte maneira:
        MÃO ROBÓTICA
 ```
 
-# 👨‍💻 Autor
+## 👨‍💻 Autor
 
 **Pedro Ledo**
 
@@ -729,6 +747,6 @@ Projeto desenvolvido na área de **Automação, Robótica e Visão Computacional
 
 ---
 
-⭐ **Se este projeto foi útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.**
+⭐ **Se este projeto foi útil para você, consIDEre deixar uma estrela no repositório e compartilhar com outros estudantes.**
 
 > **Aprender fazendo. Documentar para ensinar. Compartilhar para evoluir.**
