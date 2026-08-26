@@ -623,6 +623,15 @@ Faça o download do Visual C++ Redistributable
 
 ---
 
+Faça o download do Python 3.11.9
+<p align="center">
+  <a href="https://www.python.org/ftp/python/3.11.9/python-3.11.9-amd64.exe" target="_blank">
+    <img src="https://img.shields.io/badge/Download-Python%203.11.9-blue?style=for-the-badge&logo=python&logoColor=white" alt="Download Python 3.11.9">
+  </a>
+</p>
+
+---
+
 Com o software aberto, faça o download do código responsável pela visão computacional:
 
 <p align="center">
