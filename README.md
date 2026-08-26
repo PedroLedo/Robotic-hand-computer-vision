@@ -643,7 +643,7 @@ Execute o instalador e marque a opção **"Add python.exe to PATH"**
 Com o software aberto, faça o download do código responsável pela visão computacional:
 
 <p align="center">
-  <a href="https://drive.google.com/file/d/1aP7PeyLjqsgB7ZnouBVD599dWVqM8FzI/view?usp=drive_link" target="_blank">
+  <a href="[https://drive.google.com/file/d/1aP7PeyLjqsgB7ZnouBVD599dWVqM8FzI/view?usp=drive_link](https://drive.google.com/file/d/17t1tLfqX0sFfhhMkZPt-TPMjlAekJrZX/view?usp=drive_link)" target="_blank">
     <img src="https://img.shields.io/badge/📥_Baixar_C%C3%B3digo_do_Projeto-.ZIP-2ea44f?style=for-the-badge&logoColor=white" alt="Baixar Código">
   </a>
 </p>
