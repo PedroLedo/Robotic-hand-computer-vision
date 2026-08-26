@@ -99,7 +99,7 @@ A visão computacional é executada no computador utilizando:
 * **MediaPipe**
 * **PySerial**
 
-O MediaPipe Hands é responsável por IDEntificar a mão e suas principais articulações.
+O MediaPipe Hands é responsável por Identificar a mão e suas principais articulações.
 
 O programa analisa a posição dos pontos detectados para determinar se cada dedo está levantado ou abaixado.
 
