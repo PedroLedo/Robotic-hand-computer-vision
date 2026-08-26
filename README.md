@@ -723,7 +723,7 @@ pip install mediapipe==0.10.21 opencv-contrib-python==4.11.0.86 pyserial
 Se tudo ocorrer bem, seu terminal ficara semelhante ao da imagem abaixo:
 
 <div align="center">
-  <img src="Docs/Imagens/Captura de tela 2026-08-21 224225.png" width="600">
+  <img src="Docs/Imagens/Captura de tela 2026-08-26 192035.png" width="600">
 </div>
 
 ---
