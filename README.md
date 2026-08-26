@@ -716,7 +716,7 @@ Ative o ambiente:
 Instale as bibliotecas
 
 ```bash
-pip install mediapipe==0.10.9 pyserial opencv-python
+pip install mediapipe==0.10.21 opencv-contrib-python==4.11.0.86 pyserial
 ```
 
 
@@ -730,13 +730,16 @@ Se tudo ocorrer bem, seu terminal ficara semelhante ao da imagem abaixo:
 
 com seu terminal devidamente configurado, podemos começar a executa-lo, porém, antes, é necessário, fechar a IDE do Arduino, pois ela pode causar interferencia na comunicação serial. também é necessário mudar a sua porta com definida no código para a que voce ja tinha visto antes, la no gerenciador de dispositivos. 
 
-como mostra na imagem, se sua porta COM for diferente, tro queue o numero que está no código pelo o que você pegou no gerenciador de dispositivos:
+como mostra na imagem, se sua porta COM for diferente, troque o numero que está no código pelo o que você pegou no gerenciador de dispositivos:
 
 <div align="center">
   <img src="Docs/Imagens/Captura de tela 2026-08-21 224823.png" width="600">
 </div>
 
-----
+Após realizar as modificações, pressione as teclas **Ctrl + S** para salvar as alterações.
+
+---
+
 com tudo devidamente configurado, execute o seguinte comando no terminal:
 
 ```python
