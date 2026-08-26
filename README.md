@@ -676,18 +676,6 @@ Isso abrirá um terminal integrado, no qual serão executados os comandos necess
 
 ---
 
-Com o terminal aberto, execute os seguintes comandos:
-
-```bash
-winget install -e --id Python.Python.3.11 --version 3.11.9
-```
-
-Ele irá solicitar uma permissão, aceite-a normalmente digitando y para prosseguir.
-
-Após executar o código acima, você tera baixado o Python na versão 3.11.9, versão para melhor desempenho do projeto.
-
----
-
 Após isso, para o proximo comando é necessário ir até a pasta em que você extraiu o código da visão computacional, e copiar o caminho dele:
 
 <div align="center">
@@ -707,15 +695,31 @@ O seu deve ficar semelhante ao da imagem, lembrando que o usuario muda de pc par
 
 Após essa etapa, execute o seguinte comando:
 
-```bash
-Set-ExecutionPolicy -ExecutionPolicy Unrestricted -Scope Process
-```
-
-e em seguida:
+Comando para liberar a execução de scripts no seu PowerShell:
 
 ```bash
-.\venv\Scripts\Activate.ps1
+Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 ```
+
+Crie o ambiente virtual:
+
+```bash
+py -m venv venv
+```
+
+Ative o ambiente:
+
+```bash
+.\venv\Scripts\activate
+```
+
+Instale as bibliotecas
+
+```bash
+pip install mediapipe==0.10.9 pyserial opencv-python
+```
+
+
 Se tudo ocorrer bem, seu terminal ficara semelhante ao da imagem abaixo:
 
 <div align="center">
