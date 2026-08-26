@@ -704,7 +704,7 @@ Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
 Crie o ambiente virtual:
 
 ```bash
-py -m venv venv
+py -3.11 -m venv venv
 ```
 
 Ative o ambiente:
