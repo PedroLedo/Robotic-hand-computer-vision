@@ -632,6 +632,14 @@ Faça o download do Python 3.11.9
 
 ---
 
+Execute o instalador e marque a opção **"Add python.exe to PATH"**
+
+<div align="center">
+  <img src="Docs/Imagens/Captura de tela 2026-08-26 180927.png" width="600">
+</div>
+
+---
+
 Com o software aberto, faça o download do código responsável pela visão computacional:
 
 <p align="center">
@@ -668,7 +676,7 @@ Isso abrirá um terminal integrado, no qual serão executados os comandos necess
 
 ---
 
-Com o terminal aberto, execute o seguinte comando:
+Com o terminal aberto, execute os seguintes comandos:
 
 ```bash
 winget install -e --id Python.Python.3.11 --version 3.11.9
