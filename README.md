@@ -655,6 +655,8 @@ Com o terminal aberto, execute o seguinte comando:
 winget install -e --id Python.Python.3.11 --version 3.11.9
 ```
 
+Ele irá solicitar uma permissão, aceite-a normalmente digitando y para prosseguir.
+
 Após executar o código acima, você tera baixado o Python na versão 3.11.9, versão para melhor desempenho do projeto.
 
 ---
