@@ -616,7 +616,7 @@ após realizar o download, execute o .exe, e abra o VsCode após finalizar o Dow
 Faça o download do Visual C++ Redistributable
 
 <p align="center">
-  <a href="https://www.google.com/search?q=https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank">
+  <a href="https://aka.ms/vs/17/release/vc_redist.x64.exe" target="_blank">
     <img src="https://img.shields.io/badge/Download-Visual%20C%2B%2B%20Redistributable-blue?style=for-the-badge&logo=visualstudio" alt="Download Visual C++ Redistributable">
   </a>
 </p>
