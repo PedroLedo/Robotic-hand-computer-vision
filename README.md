@@ -661,7 +661,7 @@ Descompacte o arquivo:
 Voltando ao software... com ele aberto, use também o atalho "Ctrl + O" e abra o arquivo da visão computacional
 
 <div align="center">
-  <img src="Docs/Imagens/Captura de tela 2026-08-26 202858.png" width="600">
+  <img src="Docs/Imagens/Captura de tela 2026-08-26 202858.png" width="1200">
 </div>
 
 ---
@@ -679,7 +679,7 @@ Isso abrirá um terminal integrado, no qual serão executados os comandos necess
 Após isso, para o proximo comando é necessário ir até a pasta em que você extraiu o código da visão computacional, e copiar o caminho dele:
 
 <div align="center">
-  <img src="Docs/Imagens/Captura de tela 2026-08-26 203106.png" width="600">
+  <img src="Docs/Imagens/Captura de tela 2026-08-26 203106.png" width="1200">
 </div>
 
 copie todo o caminho e cole no terminal logo após de digitar o comando ( cd " " ) assim como demonstrado no exemplo abaixo:
