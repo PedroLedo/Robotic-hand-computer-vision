@@ -1,10 +1,10 @@
-# 🤖 Mão Robótica Controlada por Visão Computacional
+#  Mão Robótica Controlada por Visão Computacional
 
 > Projeto educacional e experimental de uma mão robótica controlada por visão computacional, desenvolvido com componentes de baixo custo e materiais acessíveis, com o objetivo de permitir que estudantes possam reproduzir, estudar e aprimorar o projeto.
 
 ---
 
-## 📑 Índice
+##  Índice
 
 - [Sobre o projeto](#-sobre-o-projeto)
 - [Funcionamento](#-funcionamento)
@@ -22,7 +22,7 @@
 - [Fluxo completo](#-fluxo-completo)
 - [Autor](#-autor)
 
-## 📖 Sobre o projeto
+##  Sobre o projeto
 
 Este projeto consiste no desenvolvimento de uma **mão robótica capaz de reproduzir individualmente os movimentos dos cinco dedos de uma mão humana utilizando visão computacional**.
 
@@ -38,7 +38,7 @@ O resultado é um sistema no qual o movimento realizado pelo usuário é reprodu
 
 ---
 
-## 🧠 Funcionamento
+##  Funcionamento
 
 O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
@@ -90,7 +90,7 @@ O funcionamento do projeto pode ser dividido em quatro etapas principais:
 
 ---
 
-## 👁️ Visão Computacional
+##  Visão Computacional
 
 A visão computacional é executada no computador utilizando:
 
@@ -117,7 +117,7 @@ A lógica do polegar é ajustada de acordo com o lado IDEntificado pelo MediaPip
 
 ---
 
-## 🎯 Área de controle
+##  Área de controle
 
 Para evitar que qualquer movimento detectado pela câmera seja imediatamente enviado para a mão robótica, o software possui uma **área de controle delimitada na imagem**.
 
@@ -156,7 +156,7 @@ Dessa maneira, o usuário pode posicionar a mão na área definida antes de come
 
 ---
 
-## 🔢 Sistema de comandos
+##  Sistema de comandos
 
 Cada dedo possui um bit no comando enviado ao Arduino.
 
@@ -193,7 +193,7 @@ O comando é enviado continuamente enquanto uma mão válida estiver dentro da �
 
 ---
 
-## ⚙️ Sistema mecânico
+##  Sistema mecânico
 
 A estrutura da mão foi construída utilizando **papelão**, tornando o projeto simples e acessível para reprodução.
 
@@ -262,7 +262,7 @@ Quando o servo retorna, o elástico auxilia o dedo a voltar para a posição abe
 
 ---
 
-## 🔌 Eletrônica
+##  Eletrônica
 
 O sistema utiliza um **Arduino Uno** para controlar os cinco servomotores.
 
@@ -328,7 +328,7 @@ O **GND da fonte dos servos é compartilhado com o GND do Arduino**, criando uma
 
 ---
 
-## 🧩 Placa de conexão
+##  Placa de conexão
 
 **Opcionalmente,** pode ser desenvolvida uma pequena placa de distribuição utilizando placa perfurada para facilitar a montagem.
 
@@ -367,7 +367,7 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ---
 
-## 💻 Software
+##  Software
 
 ## Tecnologias
 
@@ -380,13 +380,13 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ---
 
-## 📦 Instalação
+##  Instalação
 
-## 🧭 Primeiros Passos
+##  Primeiros Passos
 
 ---
 
-⚙️ 1. Instalar a Arduino IDE
+ 1. Instalar a Arduino IDE
 
 A Arduino IDE (Ambiente de Desenvolvimento Integrado) é o software que você usará para escrever o código, compilar e enviá-lo para a sua placa. A instalação é simples, mas requer atenção a alguns detalhes.
 Primeiro, você precisa baixar o instalador correto para o seu sistema operacional a partir do site oficial.
@@ -399,7 +399,7 @@ Primeiro, você precisa baixar o instalador correto para o seu sistema operacion
 
 <div align="center">
 
-### 📥 Instalando a Arduino IDE
+###  Instalando a Arduino IDE
 
 Ao clicar no botão abaixo, você será direcionado para a página oficial de downloads.
 
@@ -411,7 +411,7 @@ O site detecta automaticamente seu sistema operacional (**Windows, macOS ou Linu
 
 ---
 
-## 🪟 Instalação no Windows
+##  Instalação no Windows
 
 <div align="center">
 
@@ -490,7 +490,7 @@ Selecione o arquivo e clique em "Abrir"
 
 ---
 
-## 🚀 Instalação Driver CH340
+##  Instalação Driver CH340
 
 Antes de tudo, caso sua placa utilize o conversor USB–serial CH340/CH341, instale o respectivo driver para que o computador consiga reconhecê-la corretamente. Esse passo é essencial para garantir que a interface entre o computador e a placa funcione de forma adequada durante a compilação e a transferência de dados.
 
@@ -522,7 +522,7 @@ Durante a instalação, autorize o instalador a fazer modificações no seu comp
 
 ---
 
-## 🔍 Verificando a instalação e a porta COM
+##  Verificando a instalação e a porta COM
 
 Para confirmar se o processo foi concluído com sucesso e IDEntificar em qual porta COM o Itaquerino está conectado:
 
@@ -550,7 +550,7 @@ Com essa informação em mãos, você já pode abrir a Arduino IDE e configurar 
 
 Dentro da IDE, com oo código aberto, vamos selecionar a placa e a porta em que ela está se comunicando:
 
-## 🛠️ Selecionando a porta COM na Arduino IDE
+##  Selecionando a porta COM na Arduino IDE
 
 Com a Arduino IDE aberta, siga os passos abaixo para configurar a porta correta:
 
@@ -565,7 +565,7 @@ Selecione a porta COM que foi IDEntificada anteriormente no Gerenciador de Dispo
 </div>
 
 ---
-## 🔧 Selecionando o modelo de placa na Arduino IDE
+##  Selecionando o modelo de placa na Arduino IDE
 
 Com a porta COM já configurada, o próximo passo é selecionar o modelo de placa correto. Para este projeto, selecione Arduino Uno nas definições da IDE.
 
@@ -747,7 +747,7 @@ python Visao_Computacional.py
 ```
 Sua webcam ira abrir, e o sistema ira começar a funcionar!!
 
-# 🧪 Modo de teste
+#  Modo de teste
 
 Uma das características do software é a possibilidade de executar o sistema **sem o Arduino conectado**.
 
@@ -767,7 +767,7 @@ Isso permite testár a parte de visão computacional antes de montar a parte ele
 
 ---
 
-## 🔄 Fluxo completo
+##  Fluxo completo
 
 O funcionamento completo pode ser resumido da seguinte maneira:
 
@@ -814,7 +814,7 @@ O funcionamento completo pode ser resumido da seguinte maneira:
        MÃO ROBÓTICA
 ```
 
-## 👨‍💻 Autor
+## Autor
 
 **Pedro Ledo**
 
@@ -822,6 +822,6 @@ Projeto desenvolvido na área de **Automação, Robótica e Visão Computacional
 
 ---
 
-⭐ **Se este projeto foi útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.**
+ **Se este projeto foi útil para você, considere deixar uma estrela no repositório e compartilhar com outros estudantes.**
 
 > **Aprender fazendo. Documentar para ensinar. Compartilhar para evoluir.**
