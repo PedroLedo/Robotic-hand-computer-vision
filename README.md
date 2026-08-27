@@ -457,7 +457,7 @@ Durante a instalação, o Windows poderá solicitar permissão para instalar os 
 
 Ao finalizar, clique em **Close**.
 
-✅ A Arduino IDE estará instalada e um atalho será criado automaticamente na sua área de trabalho.
+ A Arduino IDE estará instalada e um atalho será criado automaticamente na sua área de trabalho.
 
 </div>
 
