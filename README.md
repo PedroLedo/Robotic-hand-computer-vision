@@ -348,7 +348,7 @@ A finalidade da placa não é realizar processamento eletrônico, mas **organiza
 
 ---
 
-## 🛠️ Componentes
+##  Componentes
 
 | Componente         | Quantidade | Função                               |
 | ------------------ | ---------: | ------------------------------------ |
